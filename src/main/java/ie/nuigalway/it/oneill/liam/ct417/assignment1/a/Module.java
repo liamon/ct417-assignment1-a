@@ -13,7 +13,7 @@ public class Module {
     private String name;
     private String id;
     private Student[] students;
-    private String[] courses;
+    private Course[] courses;
 
     /**
      * @return the name
@@ -60,14 +60,14 @@ public class Module {
     /**
      * @return the courses
      */
-    public String[] getCourses() {
+    public Course[] getCourses() {
         return courses;
     }
 
     /**
      * @param courses the courses to set
      */
-    public void setCourses(String[] courses) {
+    public void setCourses(Course[] courses) {
         this.courses = courses;
     }
 }

@@ -1,6 +1,5 @@
 package ie.nuigalway.it.oneill.liam.ct417.assignment1.a;
 
-import org.joda.time.DateTime;
 import org.joda.time.LocalDate;
 import org.joda.time.Years;
 
@@ -12,7 +11,7 @@ public class Student {
     private String name;
     private LocalDate dob;
     private String id;
-    private String[] courses;
+    private Course[] courses;
     private Module[] modules;
     
     /**
@@ -74,14 +73,14 @@ public class Student {
     /**
      * @return the courses
      */
-    public String[] getCourses() {
+    public Course[] getCourses() {
         return courses;
     }
 
     /**
      * @param courses the courses to set
      */
-    public void setCourses(String[] courses) {
+    public void setCourses(Course[] courses) {
         this.courses = courses;
     }
 
