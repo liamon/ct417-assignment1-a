@@ -1,6 +1,7 @@
 package ie.nuigalway.it.oneill.liam.ct417.assignment.a.test;
 
 import java.util.Date;
+import org.joda.time.LocalDate;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -42,7 +43,7 @@ public class StudentRegistrationSystemTest {
     public void testGetUsername() {
         Student student = new Student();
         student.setName("Cathal Burke");
-        student.setDob(new Date(98, 10, 15)); // Will calculate age automatically
+        student.setDob(new LocalDate(1998, 10, 15)); // Will calculate age automatically
         // Deciding that getUsername() wil lalso remove any spaces in the name.
         assertEquals("CathalBurke20", student.getUsername());
     }
