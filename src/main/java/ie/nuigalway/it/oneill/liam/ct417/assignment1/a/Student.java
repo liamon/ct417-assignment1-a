@@ -13,7 +13,7 @@ public class Student {
     private LocalDate dob;
     private String id;
     private String[] courses;
-    private String[] modules;
+    private Module[] modules;
     
     /**
      * @return the username, consisting of the name stripped of whitespace concatenated to the age
@@ -88,14 +88,14 @@ public class Student {
     /**
      * @return the modules
      */
-    public String[] getModules() {
+    public Module[] getModules() {
         return modules;
     }
 
     /**
      * @param modules the modules to set
      */
-    public void setModules(String[] modules) {
+    public void setModules(Module[] modules) {
         this.modules = modules;
     }
 }
