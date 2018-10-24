@@ -5,6 +5,10 @@
  */
 package ie.nuigalway.it.oneill.liam.ct417.assignment1.a;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 /**
  *
  * @author Liam
@@ -12,8 +16,8 @@ package ie.nuigalway.it.oneill.liam.ct417.assignment1.a;
 public class Module {
     private String name;
     private String id;
-    private Student[] students;
-    private Course[] courses;
+    private List<Student> students = new ArrayList<>();
+    private List<Course> courses = new ArrayList<>();
 
     /**
      * @return the name
@@ -46,28 +50,42 @@ public class Module {
     /**
      * @return the students
      */
-    public Student[] getStudents() {
+    public List<Student> getStudents() {
         return students;
     }
 
     /**
      * @param students the students to set
      */
-    public void setStudents(Student[] students) {
+    public void setStudents(List<Student> students) {
         this.students = students;
+    }
+    
+    /**
+     * @param students the students to add
+     */
+    public void addStudents(Student... students) {
+        this.students.addAll(Arrays.asList(students));
     }
 
     /**
      * @return the courses
      */
-    public Course[] getCourses() {
+    public List<Course> getCourses() {
         return courses;
     }
 
     /**
      * @param courses the courses to set
      */
-    public void setCourses(Course[] courses) {
+    public void setCourses(List<Course> courses) {
         this.courses = courses;
+    }
+    
+    /**
+     * @param courses the courses to add
+     */
+    public void addCourses(Course... courses) {
+        this.courses.addAll(Arrays.asList(courses));
     }
 }

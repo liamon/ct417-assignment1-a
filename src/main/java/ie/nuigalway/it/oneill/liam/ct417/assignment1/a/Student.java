@@ -1,5 +1,8 @@
 package ie.nuigalway.it.oneill.liam.ct417.assignment1.a;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import org.joda.time.LocalDate;
 import org.joda.time.Years;
 
@@ -11,8 +14,8 @@ public class Student {
     private String name;
     private LocalDate dob;
     private String id;
-    private Course[] courses;
-    private Module[] modules;
+    private List<Course> courses = new ArrayList<>();
+    private List<Module> modules = new ArrayList<>();
     
     /**
      * @return the username, consisting of the name stripped of whitespace concatenated to the age
@@ -73,28 +76,42 @@ public class Student {
     /**
      * @return the courses
      */
-    public Course[] getCourses() {
+    public List<Course> getCourses() {
         return courses;
     }
 
     /**
      * @param courses the courses to set
      */
-    public void setCourses(Course[] courses) {
+    public void setCourses(List<Course> courses) {
         this.courses = courses;
+    }
+    
+    /**
+     * @param courses the courses to add
+     */
+    public void addCourses(Course... courses) {
+        this.courses.addAll(Arrays.asList(courses));
     }
 
     /**
      * @return the modules
      */
-    public Module[] getModules() {
+    public List<Module> getModules() {
         return modules;
     }
 
     /**
      * @param modules the modules to set
      */
-    public void setModules(Module[] modules) {
+    public void setModules(List<Module> modules) {
         this.modules = modules;
+    }
+    
+    /**
+     * @param modules the modules to add
+     */
+    public void addModules(Module... modules) {
+        this.modules.addAll(Arrays.asList(modules));
     }
 }
