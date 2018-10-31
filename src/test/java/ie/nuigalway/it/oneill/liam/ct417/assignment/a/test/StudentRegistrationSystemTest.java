@@ -37,5 +37,6 @@ public class StudentRegistrationSystemTest {
         Course course = new Course();
         course.addModules(module);
         assertTrue(module.getCourses().contains(course));
+        // Module, Student and Course all have the same implementation so I do not need to test each one.
     }
 }
