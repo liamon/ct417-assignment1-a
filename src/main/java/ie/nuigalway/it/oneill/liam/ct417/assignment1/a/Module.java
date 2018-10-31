@@ -8,6 +8,7 @@ package ie.nuigalway.it.oneill.liam.ct417.assignment1.a;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.stream.Stream;
 
 /**
  *
@@ -66,6 +67,11 @@ public class Module {
      */
     public void addStudents(Student... students) {
         this.students.addAll(Arrays.asList(students));
+        Stream.of(students).forEach((student) -> {
+            if (!student.getModules().contains(this)) {
+                student.addModules(this);
+            }
+        });
     }
 
     /**
@@ -87,5 +93,10 @@ public class Module {
      */
     public void addCourses(Course... courses) {
         this.courses.addAll(Arrays.asList(courses));
+        Stream.of(courses).forEach((course) -> {
+            if (!course.getModules().contains(this)) {
+                course.addModules(this);
+            }
+        });
     }
 }

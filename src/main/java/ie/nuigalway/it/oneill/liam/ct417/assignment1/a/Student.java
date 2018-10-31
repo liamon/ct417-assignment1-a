@@ -3,6 +3,7 @@ package ie.nuigalway.it.oneill.liam.ct417.assignment1.a;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.stream.Stream;
 import org.joda.time.LocalDate;
 import org.joda.time.Years;
 
@@ -95,6 +96,11 @@ public class Student {
      */
     public void addCourses(Course... courses) {
         this.courses.addAll(Arrays.asList(courses));
+        Stream.of(courses).forEach((course) -> {
+            if (!course.getStudents().contains(this)) {
+                course.addStudents(this);
+            }
+        });
     }
 
     /**
@@ -116,5 +122,10 @@ public class Student {
      */
     public void addModules(Module... modules) {
         this.modules.addAll(Arrays.asList(modules));
+        Stream.of(modules).forEach((module) -> {
+            if (!module.getStudents().contains(this)) {
+                module.addStudents(this);
+            }
+        });
     }
 }

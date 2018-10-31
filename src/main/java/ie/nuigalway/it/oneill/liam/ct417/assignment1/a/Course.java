@@ -3,6 +3,7 @@ package ie.nuigalway.it.oneill.liam.ct417.assignment1.a;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.stream.Stream;
 import org.joda.time.LocalDate;
 
 /**
@@ -49,6 +50,12 @@ public class Course {
      */
     public void addModules(Module... modules) {
         this.modules.addAll(Arrays.asList(modules));
+        Stream.of(modules).forEach((module) -> {
+            // Need this to prevent the methods from calling each other until a call stack overflow.
+            if (!module.getCourses().contains(this)) {
+                module.addCourses(this);
+            }
+        });
     }
 
     /**
@@ -70,6 +77,11 @@ public class Course {
      */
     public void addStudents(Student... students) {
         this.students.addAll(Arrays.asList(students));
+        Stream.of(students).forEach((student) -> {
+            if (!student.getCourses().contains(this)) {
+                student.addCourses(this);
+            }
+        });
     }
 
     /**
