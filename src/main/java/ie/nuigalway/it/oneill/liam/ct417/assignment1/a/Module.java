@@ -5,9 +5,9 @@
  */
 package ie.nuigalway.it.oneill.liam.ct417.assignment1.a;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  *
@@ -16,8 +16,8 @@ import java.util.List;
 public class Module {
     private String name;
     private String id;
-    private List<Student> students = new ArrayList<>();
-    private List<Course> courses = new ArrayList<>();
+    private Set<Student> students = new HashSet<>();
+    private Set<Course> courses = new HashSet<>();
 
     /**
      * @return the name
@@ -50,14 +50,14 @@ public class Module {
     /**
      * @return the students
      */
-    public List<Student> getStudents() {
+    public Set<Student> getStudents() {
         return students;
     }
 
     /**
      * @param students the students to set
      */
-    public void setStudents(List<Student> students) {
+    public void setStudents(Set<Student> students) {
         this.students = students;
     }
     
@@ -71,14 +71,14 @@ public class Module {
     /**
      * @return the courses
      */
-    public List<Course> getCourses() {
+    public Set<Course> getCourses() {
         return courses;
     }
 
     /**
      * @param courses the courses to set
      */
-    public void setCourses(List<Course> courses) {
+    public void setCourses(Set<Course> courses) {
         this.courses = courses;
     }
     

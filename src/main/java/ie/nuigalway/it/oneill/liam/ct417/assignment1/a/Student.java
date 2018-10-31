@@ -1,8 +1,8 @@
 package ie.nuigalway.it.oneill.liam.ct417.assignment1.a;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 import org.joda.time.LocalDate;
 import org.joda.time.Years;
 
@@ -14,8 +14,8 @@ public class Student {
     private String name;
     private LocalDate dob;
     private String id;
-    private List<Course> courses = new ArrayList<>();
-    private List<Module> modules = new ArrayList<>();
+    private Set<Course> courses = new HashSet<>();
+    private Set<Module> modules = new HashSet<>();
     
     /**
      * @return the username, consisting of the name stripped of whitespace concatenated to the age
@@ -76,16 +76,19 @@ public class Student {
     /**
      * @return the courses
      */
-    public List<Course> getCourses() {
+    public Set<Course> getCourses() {
         return courses;
     }
 
     /**
      * @param courses the courses to set
      */
-    public void setCourses(List<Course> courses) {
+    public void setCourses(Set<Course> courses) {
         this.courses = courses;
     }
+    
+    // For the add methods, even if a variable appears in the input more than once,
+    // I verified because it is a Set it will only get added once.
     
     /**
      * @param courses the courses to add
@@ -97,14 +100,14 @@ public class Student {
     /**
      * @return the modules
      */
-    public List<Module> getModules() {
+    public Set<Module> getModules() {
         return modules;
     }
 
     /**
      * @param modules the modules to set
      */
-    public void setModules(List<Module> modules) {
+    public void setModules(Set<Module> modules) {
         this.modules = modules;
     }
     

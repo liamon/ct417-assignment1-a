@@ -1,8 +1,8 @@
 package ie.nuigalway.it.oneill.liam.ct417.assignment1.a;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 import org.joda.time.LocalDate;
 
 /**
@@ -11,8 +11,8 @@ import org.joda.time.LocalDate;
  */
 public class Course {
     private String name;
-    private List<Module> modules = new ArrayList<>();
-    private List<Student> students = new ArrayList<>();
+    private Set<Module> modules = new HashSet<>();
+    private Set<Student> students = new HashSet<>();
     private LocalDate startDate;
     private LocalDate endDate;
 
@@ -33,14 +33,14 @@ public class Course {
     /**
      * @return the modules
      */
-    public List<Module> getModules() {
+    public Set<Module> getModules() {
         return modules;
     }
 
     /**
      * @param modules the modules to set
      */
-    public void setModules(List<Module> modules) {
+    public void setModules(Set<Module> modules) {
         this.modules = modules;
     }
     
@@ -54,14 +54,14 @@ public class Course {
     /**
      * @return the students
      */
-    public List<Student> getStudents() {
+    public Set<Student> getStudents() {
         return students;
     }
 
     /**
      * @param students the students to set
      */
-    public void setStudents(List<Student> students) {
+    public void setStudents(Set<Student> students) {
         this.students = students;
     }
     
